@@ -77,6 +77,25 @@ export function extractStudentInfo(text: string): StudentInfo {
     return { name, studentId, dateOfBirth };
 }
 
+// Produce a specific, honest error message when no course rows were parsed,
+// based on what the extracted text actually looks like. Avoids always blaming
+// the UAccess export format when the real problem is a scan or a wrong file.
+export function describeTranscriptParseFailure(extractedText: string): string {
+    const normalized = (extractedText || '').replace(/\s+/g, ' ').trim();
+    const meaningfulChars = normalized.replace(/[^A-Za-z0-9]/g, '').length;
+
+    if (meaningfulChars < 40) {
+        return 'We could not read any text from this file. It looks like a scanned or image-only PDF. Please upload a text-based PDF exported directly from UAccess (not a scan, photo, or screenshot).';
+    }
+
+    const looksLikeTranscript = /unofficial transcript|term gpa|\bAHRS\b|\bEHRS\b|academic program history/i.test(extractedText);
+    if (looksLikeTranscript) {
+        return 'This looks like a transcript, but we could not read the individual course rows. Please re-export it as a text-based PDF from UAccess and try again.';
+    }
+
+    return 'We could not find any course rows in this file. Please make sure you are uploading your UAccess unofficial transcript, not an advisement report, exam, or other document.';
+}
+
 export function parseTranscriptText(text: string): ParsedTranscript {
     const studentInfo = extractStudentInfo(text);
     const courses: CourseGrade[] = [];
