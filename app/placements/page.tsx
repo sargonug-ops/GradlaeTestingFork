@@ -8,8 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import styles from '../styles/placements.module.css';
 import { fetchCourses, setCourses, Course, getPrerequisites } from '../lib/courseData';
 import { getRecommendedBatch, PrerequisiteInfo } from '../lib/batchLogic';
-import { extractPdfTextInBrowser } from '../lib/browserPdfText';
-import { parseTranscriptText } from '../lib/transcriptTextParser';
+import { extractPdfTextInBrowser, extractPdfTextWithLayoutInBrowser } from '../lib/browserPdfText';
+import { describeTranscriptParseFailure, parseTranscriptText } from '../lib/transcriptTextParser';
 import { courseCodeToDisplay } from '../lib/courseCodes';
 import type { DegreeAuditResult } from '../lib/degreeAudit';
 
@@ -417,11 +417,21 @@ export default function PlacementsPage() {
 
     try {
       if (selectedFile.type === 'application/pdf' || selectedFile.name.toLowerCase().endsWith('.pdf')) {
-        const text = await extractPdfTextInBrowser(selectedFile);
-        const transcript = parseTranscriptText(text);
+        // Extract the PDF two ways and keep whichever yields more course rows.
+        // The naive extractor emits one text fragment per line, which breaks
+        // row-based parsing on many real UAccess exports, while the layout
+        // extractor reconstructs (and column-splits) visual rows. Trying both
+        // makes parsing resilient to differences in PDF export format.
+        const rawText = await extractPdfTextInBrowser(selectedFile);
+        const layoutText = await extractPdfTextWithLayoutInBrowser(selectedFile);
+        const rawTranscript = parseTranscriptText(rawText);
+        const layoutTranscript = parseTranscriptText(layoutText);
+        const transcript = layoutTranscript.courses.length >= rawTranscript.courses.length
+          ? layoutTranscript
+          : rawTranscript;
 
         if (transcript.courses.length === 0) {
-          throw new Error('I could not find course rows in this PDF. Please export the transcript as a text-based PDF from UAccess and try again.');
+          throw new Error(describeTranscriptParseFailure(`${layoutText}\n${rawText}`));
         }
 
         const saveResponse = await fetch('/api/upload', {
