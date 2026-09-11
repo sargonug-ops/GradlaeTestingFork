@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "process-courses": "tsx scripts/processCourses.ts"
+    "process-courses": "tsx scripts/processCourses.ts",
+    "test": "node --import tsx --test tests/*.test.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
