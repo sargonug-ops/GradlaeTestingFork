@@ -8,3 +8,6 @@ export * from './transcriptUtils';
 export * from './majorRequirements';
 export * from './gapAnalysis';
 export * from './recommenderConfig';
+export * from './academicTerms';
+export * from './eligibility';
+export * from './scheduleRecommender';
