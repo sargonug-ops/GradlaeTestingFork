@@ -44,9 +44,10 @@ supabase/migration.sql
 supabase/migration_v2.sql
 supabase/migration_v3_degree_planning.sql
 supabase/migration_v4_feedback.sql
+supabase/migration_v5_recommended_schedules.sql
 ```
 
-Click **Run**. This creates all tables, RLS policies, storage buckets, and the `feedback` table used by `/feedback`.
+Click **Run**. This creates all tables, RLS policies, storage buckets, `feedback`, and `recommended_schedules`.
 
 ### 4. Database Tables
 
@@ -57,6 +58,7 @@ Click **Run**. This creates all tables, RLS policies, storage buckets, and the `
 | `planners` | Degree plan JSON (semesters, courses, notes) |
 | `advisor_sessions` | AI advisor conversation logs |
 | `feedback` | Product feedback / bug reports from `/feedback` (triage in Supabase dashboard) |
+| `recommended_schedules` | Saved class-recommender plans (max 5 per user; does not replace `planners`) |
 
 ### 5. Row-Level Security (RLS)
 
@@ -83,6 +85,7 @@ app/
     planner/             ← CRUD for degree planner
     advisor/             ← AI advisor (pulls from Supabase)
     degree-audit/        ← Transcript vs degree-plan progress
+    recommend/           ← Class recommender generate + save (max 5)
     user/data/           ← Data summary + delete all
   components/
     AuthProvider.tsx     ← Client auth context & useAuth() hook

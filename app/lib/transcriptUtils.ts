@@ -11,6 +11,36 @@ export interface TranscriptCourseRow {
     bestGrade?: string;
 }
 
+/** Uploaded transcripts store `courseNumber`/`courseName`; parsers use `course`/`description`. */
+export function toTranscriptCourseRow(raw: unknown): TranscriptCourseRow | null {
+    if (!raw || typeof raw !== 'object') return null;
+    const row = raw as Record<string, unknown>;
+    const course = String(row.course ?? row.courseNumber ?? '').trim();
+    if (!course) return null;
+
+    const creditsRaw = row.credits;
+    const credits = typeof creditsRaw === 'number'
+        ? creditsRaw
+        : typeof creditsRaw === 'string'
+            ? Number(creditsRaw)
+            : 0;
+
+    return {
+        course,
+        description: String(row.description ?? row.courseName ?? '').trim() || undefined,
+        grade: String(row.grade ?? '').trim(),
+        credits: Number.isFinite(credits) ? credits : 0,
+        term: String(row.term ?? '').trim(),
+        isRetake: row.isRetake === true,
+        bestGrade: row.bestGrade != null ? String(row.bestGrade).trim() : undefined,
+    };
+}
+
+export function toTranscriptCourseRows(raw: unknown): TranscriptCourseRow[] {
+    if (!Array.isArray(raw)) return [];
+    return raw.map(toTranscriptCourseRow).filter((row): row is TranscriptCourseRow => row !== null);
+}
+
 const PASSING_GRADES = new Set([
     'A+', 'A', 'A-',
     'B+', 'B', 'B-',
