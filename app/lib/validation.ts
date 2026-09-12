@@ -130,6 +130,31 @@ export const feedbackSchema = z.object({
     includeAccount: z.boolean().optional(),
 });
 
+// ─── RECOMMENDER SCHEMAS ────────────────────────────────────────────────────
+
+export const recommendTranscriptCourseSchema = z.object({
+    course: z.string().min(1).max(40).optional(),
+    courseNumber: z.string().min(1).max(40).optional(),
+    description: z.string().max(200).optional(),
+    courseName: z.string().max(200).optional(),
+    grade: z.string().max(10),
+    credits: z.coerce.number().min(0).max(20),
+    term: z.string().max(40),
+    isRetake: z.boolean().optional(),
+    bestGrade: z.string().max(10).optional(),
+}).refine((row) => Boolean(row.course || row.courseNumber), {
+    message: 'course or courseNumber is required',
+});
+
+export const recommendRequestSchema = z.object({
+    majorId: z.string().min(1).max(80),
+    targetUnits: z.number().min(1).max(30).optional(),
+    careerGoal: z.string().max(400).optional(),
+    transcript: z.array(recommendTranscriptCourseSchema).max(400).optional(),
+    save: z.boolean().optional(),
+    now: z.iso.datetime().optional(),
+});
+
 // ─── VALIDATION HELPER ──────────────────────────────────────────────────────
 
 /**

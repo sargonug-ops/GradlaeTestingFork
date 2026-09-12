@@ -37,6 +37,11 @@ export async function GET(request: NextRequest) {
             .select('id', { count: 'exact', head: true })
             .eq('user_id', user.id);
 
+        const { count: recommendedCount } = await supabaseAdmin
+            .from('recommended_schedules')
+            .select('id', { count: 'exact', head: true })
+            .eq('user_id', user.id);
+
         return NextResponse.json({
             user: {
                 id: user.id,
@@ -50,6 +55,7 @@ export async function GET(request: NextRequest) {
                 plannerSaved: !!planner,
                 plannerLastUpdated: planner?.updated_at || null,
                 advisorSessions: sessionCount || 0,
+                recommendedSchedules: recommendedCount || 0,
             },
         });
     } catch (error) {
@@ -80,6 +86,7 @@ export async function DELETE(request: NextRequest) {
         await supabaseAdmin.from('advisor_sessions').delete().eq('user_id', user.id);
         await supabaseAdmin.from('transcripts').delete().eq('user_id', user.id);
         await supabaseAdmin.from('planners').delete().eq('user_id', user.id);
+        await supabaseAdmin.from('recommended_schedules').delete().eq('user_id', user.id);
 
         return NextResponse.json({
             success: true,
