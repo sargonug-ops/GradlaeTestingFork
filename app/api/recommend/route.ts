@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { listMajorSummaries, loadMajorById } from '@/app/lib/majorRequirements';
+import { listMajorSummaries } from '@/app/lib/majorRequirements';
 import { buildRecommendation } from '@/app/lib/recommendPipeline';
+import { resolveRecommendInputs } from '@/app/lib/recommendRequest';
 import {
     listSavedRecommendations,
     saveRecommendation,
@@ -57,26 +58,19 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: validation.error }, { status: 400 });
         }
 
-        const { majorId, targetUnits, careerGoal, transcript, save, now } = validation.data;
-        const major = loadMajorById(majorId);
-        if (!major) {
-            return NextResponse.json({ error: `Unknown majorId: ${majorId}` }, { status: 400 });
+        const { targetUnits, careerGoal, transcript, save, now } = validation.data;
+        const resolved = resolveRecommendInputs(
+            validation.data,
+            transcript !== undefined ? undefined : (await loadLatestTranscriptCourses(user.id)),
+        );
+        if (!resolved.ok) {
+            return NextResponse.json({ error: resolved.error }, { status: 400 });
         }
-
-        const rows = transcript !== undefined
-            ? toTranscriptCourseRows(transcript)
-            : await loadLatestTranscriptCourses(user.id);
-
-        if (rows.length === 0) {
-            return NextResponse.json(
-                { error: 'Transcript required. Upload a transcript or send transcript courses in the request body.' },
-                { status: 400 },
-            );
-        }
+        const { major } = resolved;
 
         const built = await buildRecommendation({
             major,
-            transcript: rows,
+            transcript: resolved.transcript,
             targetUnits,
             careerGoal,
             now: now ? new Date(now) : undefined,

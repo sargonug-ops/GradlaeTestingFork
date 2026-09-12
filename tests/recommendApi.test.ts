@@ -7,6 +7,7 @@ import { dirname, join } from 'node:path';
 import { graphFromPrerequisiteMap } from '../app/lib/eligibility';
 import type { MajorRequirements } from '../app/lib/majorRequirementsTypes';
 import { overflowIdsNewestFirst } from '../app/lib/recommendedSchedules';
+import { resolveRecommendInputs } from '../app/lib/recommendRequest';
 import { buildRecommendation, summarizeGaps } from '../app/lib/recommendPipeline';
 import { MAX_SAVED_PLANNERS } from '../app/lib/recommenderConfig';
 import { toTranscriptCourseRows } from '../app/lib/transcriptUtils';
@@ -42,6 +43,31 @@ test('toTranscriptCourseRows maps stored courseNumber/courseName rows', () => {
     assert.equal(rows[0].credits, 4);
     assert.equal(rows[1].course, 'MATH-129');
     assert.equal(rows[1].bestGrade, 'B');
+});
+
+test('resolveRecommendInputs rejects unknown majors and missing transcripts', () => {
+    const unknown = resolveRecommendInputs(
+        { majorId: 'not-a-major' },
+        [{ course: 'CSC-110', grade: 'A', credits: 4, term: 'Fall 2024' }],
+    );
+    assert.equal(unknown.ok, false);
+    if (!unknown.ok) assert.match(unknown.error, /Unknown majorId/);
+
+    const emptyBody = resolveRecommendInputs(
+        { majorId: 'bs-cs-coscbs', transcript: [] },
+        [{ courseNumber: 'CSC-110', grade: 'A', credits: 4, term: 'Fall 2024' }],
+    );
+    assert.equal(emptyBody.ok, false);
+
+    const fromStore = resolveRecommendInputs(
+        { majorId: 'bs-cs-coscbs' },
+        [{ courseNumber: 'CSC-110', courseName: 'Intro', grade: 'A', credits: 4, term: 'Fall 2024' }],
+    );
+    assert.equal(fromStore.ok, true);
+    if (fromStore.ok) {
+        assert.equal(fromStore.major.id, 'bs-cs-coscbs');
+        assert.equal(fromStore.transcript[0].course, 'CSC-110');
+    }
 });
 
 test('recommendRequestSchema requires majorId and accepts stored transcript shape', () => {
