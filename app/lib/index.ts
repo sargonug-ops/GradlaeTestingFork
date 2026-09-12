@@ -11,3 +11,5 @@ export * from './recommenderConfig';
 export * from './academicTerms';
 export * from './eligibility';
 export * from './scheduleRecommender';
+export * from './scheduleAnnotations';
+export * from './llmComplete';
