@@ -1,0 +1,425 @@
+{
+  "id": "bs-chem-chembs",
+  "code": "CHEMBS",
+  "name": "B.S. in Chemistry",
+  "college": "College of Science",
+  "catalogYear": "2024-25",
+  "totalUnits": 120,
+  "source": "UofA_Chemistry_DegreeReqs",
+  "exclusiveSets": [
+    { "id": "chem-calc-i", "courseIds": ["MATH-122B", "MATH-125"] },
+    { "id": "chem-bioc", "courseIds": ["BIOC-384", "BIOC-462A"] }
+  ],
+  "groups": [
+    {
+      "id": "R532",
+      "name": "Foundations Writing",
+      "logic": "choose",
+      "chooseCount": 1,
+      "slots": [
+        {
+          "id": "R532/L10",
+          "name": "Foundations Writing — 2 Course Sequence",
+          "kind": "courses",
+          "minCourses": 2,
+          "options": [
+            { "courseId": "WRIT-101", "units": 3 },
+            { "courseId": "WRIT-101A", "units": 3 },
+            { "courseId": "WRIT-102", "units": 3 },
+            { "courseId": "WRIT-106", "units": 3 },
+            { "courseId": "WRIT-107", "units": 3 },
+            { "courseId": "WRIT-108", "units": 3 }
+          ]
+        },
+        {
+          "id": "R532/L20",
+          "name": "Foundations Writing — 1 Course Sequence",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "WRIT-109H", "units": 3 },
+            { "courseId": "WRIT-305", "units": 3 }
+          ]
+        },
+        {
+          "id": "R532/L40",
+          "name": "Foundations Writing — 3 Course Sequence",
+          "kind": "courses",
+          "minCourses": 3,
+          "options": [
+            { "courseId": "WRIT-106", "units": 3 },
+            { "courseId": "WRIT-107", "units": 3 },
+            { "courseId": "WRIT-108", "units": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R17109",
+      "name": "Foundations Mathematics",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R17109/L20",
+          "name": "Foundations Mathematics",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Foundations Mathematics"
+        }
+      ]
+    },
+    {
+      "id": "R521",
+      "name": "Foundation Second Language",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R521/L10",
+          "name": "Second Semester Language Course",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [],
+          "courseSetLabel": "Second Semester Language Course"
+        }
+      ]
+    },
+    {
+      "id": "R16657",
+      "name": "General Education Introduction and Capstone",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R16657/L10",
+          "name": "Introduction to General Education",
+          "kind": "courses",
+          "minCourses": 1,
+          "minUnits": 1,
+          "options": [{ "courseId": "UNIV-101", "units": 1 }]
+        },
+        {
+          "id": "R16657/L20",
+          "name": "General Education Capstone",
+          "kind": "courses",
+          "minCourses": 1,
+          "minUnits": 1,
+          "options": [{ "courseId": "UNIV-301", "units": 1 }]
+        }
+      ]
+    },
+    {
+      "id": "R16656",
+      "name": "Exploring Perspectives",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R16656/L10",
+          "name": "Artist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Artist Courses"
+        },
+        {
+          "id": "R16656/L50",
+          "name": "Humanist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Humanist Courses"
+        },
+        {
+          "id": "R16656/L90",
+          "name": "Natural Scientist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Natural Scientist Courses"
+        },
+        {
+          "id": "R16656/L130",
+          "name": "Social Scientist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Social Scientist Courses"
+        }
+      ]
+    },
+    {
+      "id": "R16658",
+      "name": "Building Connections",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R16658/L10",
+          "name": "Building Connections Courses",
+          "kind": "course_set",
+          "minCourses": 2,
+          "minUnits": 6,
+          "options": [],
+          "courseSetLabel": "Building Connections Courses"
+        }
+      ]
+    },
+    {
+      "id": "R17271",
+      "name": "Civic Institutions",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R17271/L10",
+          "name": "Civic Institutions",
+          "kind": "courses",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [
+            { "courseId": "HIST-150C3", "units": 3 },
+            { "courseId": "POL-201", "units": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R1145",
+      "name": "Mathematics",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R1145/L10A",
+          "name": "Calculus I",
+          "kind": "courses",
+          "minCourses": 1,
+          "notes": "Only one of MATH 122B or MATH 125 counts.",
+          "options": [
+            { "courseId": "MATH-122B", "title": "First-Semester Calculus", "units": 4 },
+            { "courseId": "MATH-125", "title": "Calculus I", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1145/L10B",
+          "name": "Calculus II",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [{ "courseId": "MATH-129", "title": "Calculus II", "units": 3 }]
+        }
+      ]
+    },
+    {
+      "id": "R17076",
+      "name": "Physics",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R17076/L10",
+          "name": "Physics I",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "PHYS-141", "title": "Introductory Mechanics", "units": 4 },
+            { "courseId": "PHYS-161H", "units": 4 }
+          ]
+        },
+        {
+          "id": "R17076/L20",
+          "name": "Physics II",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "PHYS-241", "title": "Introductory Electricity and Magnetism", "units": 4 },
+            { "courseId": "PHYS-261H", "units": 4 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R1146",
+      "name": "General Chemistry",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R1146/L5",
+          "name": "First-Year Colloquium",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [{ "courseId": "CHEM-195A", "title": "Chemistry & Biochemistry First-Year Colloquium I", "units": 1 }]
+        },
+        {
+          "id": "R1146/L10",
+          "name": "First Semester General Chemistry",
+          "kind": "units",
+          "minUnits": 4,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "CHEM-141", "units": 3 },
+            { "courseId": "CHEM-145", "units": 1 },
+            { "courseId": "CHEM-161", "units": 3 },
+            { "courseId": "CHEM-163", "units": 1 },
+            { "courseId": "CHEM-181", "units": 4 }
+          ]
+        },
+        {
+          "id": "R1146/L20",
+          "name": "Second Semester General Chemistry",
+          "kind": "units",
+          "minUnits": 4,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "CHEM-142", "units": 3 },
+            { "courseId": "CHEM-146", "units": 1 },
+            { "courseId": "CHEM-162", "units": 3 },
+            { "courseId": "CHEM-164", "units": 1 },
+            { "courseId": "CHEM-182", "units": 4 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R1148",
+      "name": "Organic Chemistry",
+      "logic": "choose",
+      "chooseCount": 1,
+      "slots": [
+        {
+          "id": "R1148/L10",
+          "name": "Principles of Organic Chemistry (one course)",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [{ "courseId": "CHEM-246", "title": "Principles Of Organic Chemistry", "units": 3 }]
+        },
+        {
+          "id": "R1148/L20",
+          "name": "Lectures in Organic Chemistry (two courses)",
+          "kind": "courses",
+          "minCourses": 2,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "CHEM-241A", "title": "Lectures in Organic Chemistry", "units": 3 },
+            { "courseId": "CHEM-241B", "title": "Lectures in Organic Chemistry", "units": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R1150",
+      "name": "Advanced Chemistry",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R1150/L5",
+          "name": "Chemistry Major Colloquia",
+          "kind": "courses",
+          "minCourses": 2,
+          "options": [
+            { "courseId": "CHEM-295A", "units": 1 },
+            { "courseId": "CHEM-395A", "units": 1 }
+          ]
+        },
+        {
+          "id": "R1150/L10",
+          "name": "Core Requirements",
+          "kind": "courses",
+          "minCourses": 5,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "CHEM-227", "units": 3 },
+            { "courseId": "CHEM-256L", "units": 2 },
+            { "courseId": "CHEM-310", "units": 3 },
+            { "courseId": "CHEM-330L", "units": 2 },
+            { "courseId": "CHEM-385", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1150/L18",
+          "name": "Biochemistry",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "BIOC-384", "units": 3 },
+            { "courseId": "BIOC-462A", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1150/L20",
+          "name": "In-Depth Coursework",
+          "kind": "units",
+          "minUnits": 6,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "CHEM-346", "units": 3 },
+            { "courseId": "CHEM-401A", "units": 3 },
+            { "courseId": "CHEM-410", "units": 3 },
+            { "courseId": "CHEM-423A", "units": 3 },
+            { "courseId": "CHEM-450", "units": 3 },
+            { "courseId": "CHEM-487", "units": 3 },
+            { "courseId": "CHEM-510", "units": 3 },
+            { "courseId": "CHEM-523A", "units": 3 },
+            { "courseId": "CHEM-550", "units": 3 },
+            { "courseId": "CHEM-587", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1150/L23",
+          "name": "Advanced Laboratory Coursework",
+          "kind": "units",
+          "minUnits": 6,
+          "minGrade": "C",
+          "notes": "PDF asks for 9 units total across this line plus Additional Advanced Laboratory.",
+          "options": [
+            { "courseId": "BIOC-463A", "units": 3 },
+            { "courseId": "CHEM-356L", "units": 3 },
+            { "courseId": "CHEM-400A", "units": 3 },
+            { "courseId": "CHEM-400B", "units": 3 },
+            { "courseId": "CHEM-412", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1150/L25",
+          "name": "Additional Advanced Laboratory Coursework",
+          "kind": "units",
+          "minUnits": 3,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "BIOC-463A", "units": 3 },
+            { "courseId": "CHEM-356L", "units": 3 },
+            { "courseId": "CHEM-400A", "units": 3 },
+            { "courseId": "CHEM-400B", "units": 3 },
+            { "courseId": "CHEM-412", "units": 3 },
+            { "courseId": "CHEM-492", "units": 3 },
+            { "courseId": "CHEM-492H", "units": 3 },
+            { "courseId": "CHEM-498", "units": 3 },
+            { "courseId": "CHEM-498H", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1150/L30",
+          "name": "Advanced Electives I",
+          "kind": "course_set",
+          "minUnits": 6,
+          "minGrade": "C",
+          "options": [],
+          "courseSetLabel": "Advanced Electives I"
+        },
+        {
+          "id": "R1150/L35",
+          "name": "Advanced Electives II",
+          "kind": "course_set",
+          "minUnits": 3,
+          "minGrade": "C",
+          "options": [],
+          "courseSetLabel": "Advanced Electives II"
+        }
+      ]
+    }
+  ]
+}
