@@ -5,3 +5,6 @@ export * from './courseCodes';
 export * from './degreePlans';
 export * from './degreeAudit';
 export * from './transcriptUtils';
+export * from './majorRequirements';
+export * from './gapAnalysis';
+export * from './recommenderConfig';
