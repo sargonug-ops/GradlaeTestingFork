@@ -1,0 +1,542 @@
+{
+  "id": "bs-cs-coscbs",
+  "code": "COSCBS",
+  "name": "B.S. in Computer Science",
+  "college": "College of Science",
+  "catalogYear": "2024-25",
+  "totalUnits": 120,
+  "source": "UofA_CS_DegreeReqs",
+  "exclusiveSets": [
+    { "id": "cs-prog-i", "courseIds": ["CSC-110", "ECE-101", "ECE-175", "ISTA-130"] },
+    { "id": "cs-discrete-i", "courseIds": ["CSC-144", "MATH-243", "MATH-323"] },
+    { "id": "cs-org", "courseIds": ["CSC-252", "ECE-369A"] },
+    { "id": "cs-data", "courseIds": ["CSC-380", "DATA-363", "MATH-363"] }
+  ],
+  "groups": [
+    {
+      "id": "R532",
+      "name": "Foundations Writing",
+      "logic": "choose",
+      "chooseCount": 1,
+      "slots": [
+        {
+          "id": "R532/L10",
+          "name": "Foundations Writing — 2 Course Sequence",
+          "kind": "courses",
+          "minCourses": 2,
+          "options": [
+            { "courseId": "WRIT-101", "title": "First-Year Composition", "units": 3 },
+            { "courseId": "WRIT-101A", "title": "First-Year Composition with Discussion", "units": 3 },
+            { "courseId": "WRIT-102", "title": "First-Year Composition", "units": 3 },
+            { "courseId": "WRIT-106", "title": "Foundations Writing for EAL Students", "units": 3 },
+            { "courseId": "WRIT-107", "title": "Foundations Writing for EAL Students", "units": 3 },
+            { "courseId": "WRIT-108", "title": "Foundations Writing for EAL Students", "units": 3 }
+          ]
+        },
+        {
+          "id": "R532/L20",
+          "name": "Foundations Writing — 1 Course Sequence",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [
+            { "courseId": "WRIT-109H", "title": "Advanced First-Year Composition", "units": 3 },
+            { "courseId": "WRIT-305", "title": "Writing 305", "units": 3 }
+          ]
+        },
+        {
+          "id": "R532/L40",
+          "name": "Foundations Writing — 3 Course Sequence",
+          "kind": "courses",
+          "minCourses": 3,
+          "options": [
+            { "courseId": "WRIT-106", "title": "Foundations Writing for EAL Students", "units": 3 },
+            { "courseId": "WRIT-107", "title": "Foundations Writing for EAL Students", "units": 3 },
+            { "courseId": "WRIT-108", "title": "Foundations Writing for EAL Students", "units": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R17109",
+      "name": "Foundations Mathematics",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R17109/L20",
+          "name": "Foundations Mathematics",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Foundations Mathematics",
+          "notes": "Major math courses typically satisfy this; confirm with advisor."
+        }
+      ]
+    },
+    {
+      "id": "R521",
+      "name": "Foundation Second Language",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R521/L10",
+          "name": "Second Semester Language Course",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [],
+          "courseSetLabel": "Second Semester Language Course"
+        }
+      ]
+    },
+    {
+      "id": "R16657",
+      "name": "General Education Introduction and Capstone",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R16657/L10",
+          "name": "Introduction to General Education",
+          "kind": "courses",
+          "minCourses": 1,
+          "minUnits": 1,
+          "options": [{ "courseId": "UNIV-101", "title": "Introduction to the General Education Experience", "units": 1 }]
+        },
+        {
+          "id": "R16657/L20",
+          "name": "General Education Capstone",
+          "kind": "courses",
+          "minCourses": 1,
+          "minUnits": 1,
+          "options": [{ "courseId": "UNIV-301", "title": "General Education Portfolio", "units": 1 }]
+        }
+      ]
+    },
+    {
+      "id": "R16656",
+      "name": "Exploring Perspectives",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R16656/L10",
+          "name": "Artist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Artist Courses"
+        },
+        {
+          "id": "R16656/L50",
+          "name": "Humanist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Humanist Courses"
+        },
+        {
+          "id": "R16656/L90",
+          "name": "Natural Scientist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Natural Scientist Courses"
+        },
+        {
+          "id": "R16656/L130",
+          "name": "Social Scientist",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Social Scientist Courses"
+        }
+      ]
+    },
+    {
+      "id": "R16658",
+      "name": "Building Connections",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R16658/L10",
+          "name": "Building Connections Courses",
+          "kind": "course_set",
+          "minCourses": 2,
+          "minUnits": 6,
+          "options": [],
+          "courseSetLabel": "Building Connections Courses"
+        }
+      ]
+    },
+    {
+      "id": "R17271",
+      "name": "Civic Institutions",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R17271/L10",
+          "name": "Civic Institutions",
+          "kind": "courses",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [
+            { "courseId": "HIST-150C3", "title": "U.S. Society and Institutions Since 1877", "units": 3 },
+            { "courseId": "POL-201", "title": "American National Government", "units": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R15831",
+      "name": "Computer Science Supporting Mathematics",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R15831/L5",
+          "name": "Calculus I",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "MATH-122B", "title": "First-Semester Calculus", "units": 4 },
+            { "courseId": "MATH-125", "title": "Calculus I", "units": 3 }
+          ]
+        },
+        {
+          "id": "R15831/L10",
+          "name": "Calculus II or Linear Algebra",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "MATH-129", "title": "Calculus II", "units": 3 },
+            { "courseId": "MATH-313", "title": "Introduction to Linear Algebra", "units": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R15829",
+      "name": "Computer Science Supporting Science",
+      "logic": "choose",
+      "chooseCount": 2,
+      "slots": [
+        {
+          "id": "R15829/L10",
+          "name": "Chemistry I",
+          "kind": "units",
+          "minUnits": 4,
+          "options": [
+            { "courseId": "CHEM-141", "units": 3 },
+            { "courseId": "CHEM-143", "units": 1 },
+            { "courseId": "CHEM-145", "units": 1 },
+            { "courseId": "CHEM-151", "title": "Chemical Thinking I", "units": 4 },
+            { "courseId": "CHEM-161", "units": 3 },
+            { "courseId": "CHEM-163", "units": 1 },
+            { "courseId": "CHEM-181", "units": 4 }
+          ]
+        },
+        {
+          "id": "R15829/L20",
+          "name": "Chemistry II",
+          "kind": "units",
+          "minUnits": 4,
+          "options": [
+            { "courseId": "CHEM-142", "units": 3 },
+            { "courseId": "CHEM-144", "units": 1 },
+            { "courseId": "CHEM-146", "units": 1 },
+            { "courseId": "CHEM-152", "title": "Chemical Thinking II", "units": 4 },
+            { "courseId": "CHEM-162", "units": 3 },
+            { "courseId": "CHEM-164", "units": 1 },
+            { "courseId": "CHEM-182", "units": 4 }
+          ]
+        },
+        {
+          "id": "R15829/L30",
+          "name": "Physics I",
+          "kind": "units",
+          "minUnits": 4,
+          "options": [
+            { "courseId": "PHYS-102", "units": 3 },
+            { "courseId": "PHYS-110", "units": 4 },
+            { "courseId": "PHYS-139", "units": 4 },
+            { "courseId": "PHYS-140", "units": 4 },
+            { "courseId": "PHYS-141", "title": "Introductory Mechanics", "units": 4 },
+            { "courseId": "PHYS-161H", "units": 4 },
+            { "courseId": "PHYS-181", "units": 1 }
+          ]
+        },
+        {
+          "id": "R15829/L40",
+          "name": "Physics II",
+          "kind": "units",
+          "minUnits": 4,
+          "options": [
+            { "courseId": "PHYS-103", "units": 3 },
+            { "courseId": "PHYS-111", "units": 4 },
+            { "courseId": "PHYS-182", "units": 1 },
+            { "courseId": "PHYS-239", "units": 1 },
+            { "courseId": "PHYS-240", "units": 4 },
+            { "courseId": "PHYS-241", "title": "Introductory Electricity and Magnetism", "units": 4 },
+            { "courseId": "PHYS-261H", "units": 4 }
+          ]
+        },
+        {
+          "id": "R15829/L45",
+          "name": "Physics II — Option II",
+          "kind": "units",
+          "minUnits": 3,
+          "options": [
+            { "courseId": "PHYS-142", "units": 3 },
+            { "courseId": "PHYS-162H", "units": 3 }
+          ]
+        },
+        {
+          "id": "R15829/L50",
+          "name": "Biology I",
+          "kind": "units",
+          "minUnits": 4,
+          "options": [
+            { "courseId": "MCB-181L", "units": 1 },
+            { "courseId": "MCB-181R", "units": 3 }
+          ]
+        },
+        {
+          "id": "R15829/L60",
+          "name": "Biology II",
+          "kind": "units",
+          "minUnits": 4,
+          "options": [
+            { "courseId": "ECOL-182L", "units": 1 },
+            { "courseId": "ECOL-182R", "units": 3 }
+          ]
+        },
+        {
+          "id": "R15829/L70",
+          "name": "Other Supporting Science Options I",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "GEOS-251", "units": 4 },
+            { "courseId": "GEOS-255", "units": 4 },
+            { "courseId": "MSE-110", "units": 4 },
+            { "courseId": "PSIO-201", "units": 4 },
+            { "courseId": "PSIO-202", "units": 4 }
+          ]
+        },
+        {
+          "id": "R15829/L80",
+          "name": "Other Supporting Science Options II",
+          "kind": "courses",
+          "minCourses": 1,
+          "notes": "Coursework used in Other Supporting Science Options I cannot be used here.",
+          "options": [
+            { "courseId": "GEOS-251", "units": 4 },
+            { "courseId": "GEOS-255", "units": 4 },
+            { "courseId": "MSE-110", "units": 4 },
+            { "courseId": "PSIO-201", "units": 4 },
+            { "courseId": "PSIO-202", "units": 4 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R1299",
+      "name": "Computer Science Major: Foundation Courses",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R1299/L30",
+          "name": "Computer Programming I",
+          "kind": "courses",
+          "minCourses": 1,
+          "notes": "Only one of CSC 110, ECE 101, ECE 175, ISTA 130 counts.",
+          "options": [
+            { "courseId": "CSC-110", "title": "Introduction to Computer Programming I", "units": 4 },
+            { "courseId": "ECE-101", "title": "Programming 1", "units": 4 },
+            { "courseId": "ECE-175", "units": 3 },
+            { "courseId": "ISTA-130", "units": 4 }
+          ]
+        },
+        {
+          "id": "R1299/L40",
+          "name": "Computer Programming II",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [{ "courseId": "CSC-120", "title": "Introduction to Computer Programming II", "units": 4 }]
+        },
+        {
+          "id": "R1299/L50",
+          "name": "Discrete Mathematics I",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "CSC-144", "title": "Discrete Mathematics for Computer Science I", "units": 3 },
+            { "courseId": "MATH-243", "title": "Discrete Mathematics", "units": 3 },
+            { "courseId": "MATH-323", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1299/L60",
+          "name": "Additional CS Foundation Course",
+          "kind": "course_set",
+          "minCourses": 1,
+          "options": [],
+          "courseSetLabel": "Advisor Approved Course"
+        },
+        {
+          "id": "R1299/L70",
+          "name": "Software Development",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [{ "courseId": "CSC-210", "title": "Software Development", "units": 4 }]
+        },
+        {
+          "id": "R1299/L75",
+          "name": "Discrete Mathematics II",
+          "kind": "courses",
+          "minCourses": 1,
+          "minGrade": "C",
+          "options": [{ "courseId": "CSC-244", "title": "Discrete Mathematics for Computer Science II", "units": 3 }]
+        },
+        {
+          "id": "R1299/L80",
+          "name": "At Least Two UA Programming Courses",
+          "kind": "courses",
+          "minCourses": 2,
+          "allowReuse": true,
+          "notes": "Courses displayed here may be used on other lines.",
+          "options": [
+            { "courseId": "CSC-110", "units": 4 },
+            { "courseId": "CSC-120", "units": 4 },
+            { "courseId": "CSC-210", "units": 4 },
+            { "courseId": "CSC-252", "units": 3 },
+            { "courseId": "CSC-317", "units": 3 },
+            { "courseId": "CSC-335", "units": 3 },
+            { "courseId": "CSC-337", "units": 3 },
+            { "courseId": "CSC-343", "units": 3 },
+            { "courseId": "CSC-346", "units": 3 },
+            { "courseId": "CSC-352", "units": 3 },
+            { "courseId": "CSC-372", "units": 3 },
+            { "courseId": "CSC-380", "units": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R1300",
+      "name": "Computer Science Major: Advanced Standing",
+      "logic": "all",
+      "slots": [
+        {
+          "id": "R1300/L40",
+          "name": "Advanced Standing",
+          "kind": "milestone",
+          "options": [],
+          "notes": "Competitive GPA/course gate. Not auto-satisfied from the transcript."
+        },
+        {
+          "id": "R1300/L50",
+          "name": "Core",
+          "kind": "courses",
+          "minCourses": 5,
+          "options": [
+            { "courseId": "CSC-252", "title": "Computer Organization", "units": 3 },
+            { "courseId": "ECE-369A", "units": 3 },
+            { "courseId": "CSC-335", "title": "Object-Oriented Programming and Design", "units": 3 },
+            { "courseId": "CSC-345", "title": "Analysis of Discrete Structures", "units": 3 },
+            { "courseId": "CSC-352", "title": "Systems Programming and Unix", "units": 3 },
+            { "courseId": "CSC-380", "title": "Principles of Data Science", "units": 3 },
+            { "courseId": "DATA-363", "title": "Introduction to Statistical Methods", "units": 3 },
+            { "courseId": "MATH-363", "title": "Introduction to Statistical Methods", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1300/L60",
+          "name": "Paradigms Area Elective",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "CSC-343", "units": 3 },
+            { "courseId": "CSC-372", "units": 3 },
+            { "courseId": "CSC-422", "units": 3 },
+            { "courseId": "CSC-460", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1300/L70",
+          "name": "Theory and Writing Area Elective",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "CSC-437", "units": 3 },
+            { "courseId": "CSC-445", "units": 3 },
+            { "courseId": "CSC-450", "units": 3 },
+            { "courseId": "CSC-473", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1300/L80",
+          "name": "Systems Area Elective",
+          "kind": "courses",
+          "minCourses": 1,
+          "options": [
+            { "courseId": "CSC-452", "units": 3 },
+            { "courseId": "CSC-453", "units": 3 }
+          ]
+        },
+        {
+          "id": "R1300/L90",
+          "name": "Electives",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Electives"
+        },
+        {
+          "id": "R1300/L100",
+          "name": "Additional Elective",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Additional Elective"
+        },
+        {
+          "id": "R1300/L110",
+          "name": "Additional Elective II",
+          "kind": "course_set",
+          "minCourses": 1,
+          "minUnits": 3,
+          "options": [],
+          "courseSetLabel": "Additional Elective II"
+        },
+        {
+          "id": "R1300/L120",
+          "name": "Upper Division Major Residency Units",
+          "kind": "units",
+          "minUnits": 12,
+          "allowReuse": true,
+          "options": [],
+          "selectionRule": { "subject": "CSC", "minLevel": 300 },
+          "courseSetLabel": "Upper Division Major Residency Units"
+        },
+        {
+          "id": "R1300/L130",
+          "name": "400-level and Paradigms Major Residency Units",
+          "kind": "units",
+          "minUnits": 6,
+          "allowReuse": true,
+          "options": [],
+          "selectionRule": { "subject": "CSC", "minLevel": 400 },
+          "courseSetLabel": "400 level and Paradigms Major Residency Units"
+        }
+      ]
+    }
+  ]
+}

@@ -3,18 +3,24 @@
  * All internal graph/plan IDs use SUBJ-NUM (e.g. CSC-110).
  */
 
-const COURSE_CODE_PATTERN = /([A-Z]{2,5})[\s-]?(\d{3}[A-Z]*)/i;
+const COURSE_CODE_PATTERN = /([A-Z]{2,5})[\s-]?(\d{3}[A-Z0-9]*)/i;
 
 export function normalizeCourseCode(input: string): string | null {
     const trimmed = input.trim().toUpperCase();
     if (!trimmed) return null;
 
-    const direct = trimmed.match(/^([A-Z]{2,5})-(\d{3}[A-Z]*)$/);
+    const compact = trimmed.replace(/\s+/g, '');
+    const glued = compact.match(/^([A-Z]{2,5})(\d{3}[A-Z0-9]*)$/);
+    if (glued) {
+        return `${glued[1]}-${glued[2]}`;
+    }
+
+    const direct = trimmed.match(/^([A-Z]{2,5})-(\d{3}[A-Z0-9]*)$/);
     if (direct) {
         return `${direct[1]}-${direct[2]}`;
     }
 
-    const spaced = trimmed.match(/^([A-Z]{2,5})\s+(\d{3}[A-Z]*)$/);
+    const spaced = trimmed.match(/^([A-Z]{2,5})\s+(\d{3}[A-Z0-9]*)$/);
     if (spaced) {
         return `${spaced[1]}-${spaced[2]}`;
     }
